@@ -1,11 +1,15 @@
-import time
 import math
+import time
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-def answer(): 
+
+def answer():
     return math.log(int(time.time()))
+
+
 links = ["236895", "236896", "236897", "236898", "236899", "236903", "236904", "236905"]
 
 

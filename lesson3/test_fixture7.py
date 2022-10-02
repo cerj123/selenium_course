@@ -1,8 +1,8 @@
-#pytest -rxX -v test_fixture7.py
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+# pytest -rxX -v test_fixture7.py
 link = "http://selenium1py.pythonanywhere.com/"
 
 
@@ -15,7 +15,7 @@ def browser():
     browser.quit()
 
 
-class TestMainPage1():
+class TestMainPage:
 
     def test_guest_should_see_login_link(self, browser):
         browser.get(link)
@@ -29,8 +29,8 @@ class TestMainPage1():
     def test_guest_should_see_favorite_button_on_the_main_page(self, browser):
         browser.get(link)
         browser.find_element(By.CSS_SELECTOR, "button.favorite")
-        
+
     @pytest.mark.xfail(reason="fixing this bug right now")
     def test_guest_should_see_search_button_on_the_main_page(self, browser):
         browser.get(link)
-        browser.find_element(By.CSS_SELECTOR, "input.btn.btn-default")    
+        browser.find_element(By.CSS_SELECTOR, "input.btn.btn-default")

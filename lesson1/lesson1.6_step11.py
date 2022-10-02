@@ -1,12 +1,13 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 import time
 
-try:
-    link = "http://suninjuly.github.io/registration2.html"
-    browser = webdriver.Chrome()
-    browser.get(link)
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
+link = "http://suninjuly.github.io/registration2.html"
+browser = webdriver.Chrome()
+
+try:
+    browser.get(link)
     firstName = browser.find_element(By.CSS_SELECTOR, ".first:required")
     firstName.send_keys("Test")
     lastName = browser.find_element(By.CSS_SELECTOR, ".second:required")

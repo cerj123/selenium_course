@@ -1,21 +1,21 @@
 import unittest
-import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
 class TestAbs(unittest.TestCase):
     def test_registration1(self):
+        link = "http://suninjuly.github.io/registration1.html"
+        browser = webdriver.Chrome()
         try:
-            link = "http://suninjuly.github.io/registration1.html"
-            browser = webdriver.Chrome()
             browser.get(link)
             browser.implicitly_wait(5)
 
-            firstName = browser.find_element(By.CSS_SELECTOR, ".first:required")
-            firstName.send_keys("Test")
-            lastName = browser.find_element(By.CSS_SELECTOR, ".second:required")
-            lastName.send_keys("Test")
+            first_name = browser.find_element(By.CSS_SELECTOR, ".first:required")
+            first_name.send_keys("Test")
+            last_name = browser.find_element(By.CSS_SELECTOR, ".second:required")
+            last_name.send_keys("Test")
             email = browser.find_element(By.CSS_SELECTOR, ".third:required")
             email.send_keys("test@test.com")
 
@@ -29,16 +29,16 @@ class TestAbs(unittest.TestCase):
             browser.quit()
 
     def test_registration2(self):
+        link = "http://suninjuly.github.io/registration2.html"
+        browser = webdriver.Chrome()
         try:
-            link = "http://suninjuly.github.io/registration2.html"
-            browser = webdriver.Chrome()
             browser.get(link)
             browser.implicitly_wait(5)
 
-            firstName = browser.find_element(By.CSS_SELECTOR, ".first:required")
-            firstName.send_keys("Test")
-            lastName = browser.find_element(By.CSS_SELECTOR, ".second:required")
-            lastName.send_keys("Test")
+            first_name = browser.find_element(By.CSS_SELECTOR, ".first:required")
+            first_name.send_keys("Test")
+            last_name = browser.find_element(By.CSS_SELECTOR, ".second:required")
+            last_name.send_keys("Test")
             email = browser.find_element(By.CSS_SELECTOR, ".third:required")
             email.send_keys("test@test.com")
 
@@ -50,6 +50,7 @@ class TestAbs(unittest.TestCase):
             self.assertEqual(welcome_text, "Congratulations! You have successfully registered!")
         finally:
             browser.quit()
+
 
 if __name__ == "__main__":
     unittest.main()

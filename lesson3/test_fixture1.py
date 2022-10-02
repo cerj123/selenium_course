@@ -3,17 +3,19 @@ from selenium.webdriver.common.by import By
 link = "http://selenium1py.pythonanywhere.com/"
 
 
-class TestMainPage1():
+class TestMainPage1:
+
+    browser = None
 
     @classmethod
-    def setup_class(self):
+    def setup_class(cls):
         print("\nstart browser for test suite1..")
-        self.browser = webdriver.Chrome()
+        cls.browser = webdriver.Chrome()
 
     @classmethod
-    def teardown_class(self):
+    def teardown_class(cls):
         print("quit browser for test suite1..")
-        self.browser.quit()
+        cls.browser.quit()
 
     def test_guest_should_see_login_link(self):
         self.browser.get(link)
@@ -24,7 +26,7 @@ class TestMainPage1():
         self.browser.find_element(By.CSS_SELECTOR, ".basket-mini .btn-group > a")
 
 
-class TestMainPage2():
+class TestMainPage2:
 
     def setup_method(self):
         print("start browser for test..")

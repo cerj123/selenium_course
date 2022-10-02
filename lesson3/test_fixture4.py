@@ -14,9 +14,7 @@ def browser():
     browser.quit()
 
 
-class TestMainPage1():
-
-    # вызываем фикстуру в тесте, передав ее как параметр
+class TestMainPage:
     def test_guest_should_see_login_link(self, browser):
         print("start test1")
         browser.get(link)
